@@ -33,6 +33,18 @@
     } else {
         NSLog(@"%@: %@", level, message);
     }
+
+    NSDictionary dict = [[NSMutableDictionary alloc] init];
+    if(level){
+        [dict setValue:level forKey:@"level"];
+    }
+    
+    if(message){
+        [dict setValue:message forKey:@"message"];
+    }	
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CDVLoggerNotification"
+                                                        object:nil
+                                                      userInfo:dict];
 }
 
 @end
