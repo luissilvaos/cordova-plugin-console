@@ -34,7 +34,7 @@
         NSLog(@"%@: %@", level, message);
     }
 
-    NSDictionary dict = [[NSMutableDictionary alloc] init];
+    NSDictionary *dict = [[NSMutableDictionary alloc] init];
     if(level){
         [dict setValue:level forKey:@"level"];
     }
